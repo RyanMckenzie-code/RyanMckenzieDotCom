@@ -224,6 +224,85 @@ function attachInstagramEmbed() {
 
 attachInstagramEmbed();
 
+/* ---------------------------------------
+   FACEBOOK PAGE EMBED MODAL (header button)
+---------------------------------------- */
+function attachFacebookEmbed() {
+  const fbIcon = document.querySelector('.header-icons img[alt="Facebook"]');
+  if (!fbIcon) return;
+
+  const parentLink = fbIcon.closest('a');
+  if (!parentLink) return;
+
+  const ensureFBRoot = () => {
+    if (!document.getElementById('fb-root')) {
+      const fbRoot = document.createElement('div');
+      fbRoot.id = 'fb-root';
+      document.body.appendChild(fbRoot);
+    }
+  };
+
+  const ensureSDK = () => {
+    if (window.FB) return;
+    ensureFBRoot();
+    const s = document.createElement('script');
+    s.async = true;
+    s.defer = true;
+    s.crossOrigin = "anonymous";
+    s.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0";
+    document.body.appendChild(s);
+  };
+
+  const ensureModal = () => {
+    let modal = document.getElementById('fb-embed-modal');
+    if (modal) return modal;
+
+    modal = document.createElement('div');
+    modal.id = 'fb-embed-modal';
+    modal.innerHTML = `
+      <div class="fb-embed-backdrop"></div>
+      <div class="fb-embed-content">
+        <button class="fb-close" aria-label="Close Facebook embed">×</button>
+        <div class="fb-embed-body">
+          <div class="fb-page"
+            data-href="https://www.facebook.com/profile.php?id=61574476614038&amp;open_field=website&amp;sk=about_contact_and_basic_info"
+            data-tabs="timeline"
+            data-width="500"
+            data-height="420"
+            data-small-header="true"
+            data-adapt-container-width="true"
+            data-hide-cover="false"
+            data-show-facepile="true">
+            <blockquote
+              cite="https://www.facebook.com/profile.php?id=61574476614038&amp;open_field=website&amp;sk=about_contact_and_basic_info"
+              class="fb-xfbml-parse-ignore">
+              <a href="https://www.facebook.com/profile.php?id=61574476614038&amp;open_field=website&amp;sk=about_contact_and_basic_info">Ryan McKenzie Music</a>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    const closeModal = () => modal.classList.remove('show');
+    modal.querySelector('.fb-close').addEventListener('click', closeModal);
+    modal.querySelector('.fb-embed-backdrop').addEventListener('click', closeModal);
+    return modal;
+  };
+
+  parentLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    ensureSDK();
+    const modal = ensureModal();
+    modal.classList.add('show');
+    if (window.FB && window.FB.XFBML) {
+      window.FB.XFBML.parse(modal);
+    }
+  });
+}
+
+attachFacebookEmbed();
+
 
 /* ---------------------------------------
    (Optional) OLD DISAPPEARING NAV
