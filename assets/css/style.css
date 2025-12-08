@@ -1023,6 +1023,18 @@ header.show-title .site-title {
         flex-wrap: wrap;
         gap: 0.75rem;
     }
+    .music-hero {
+        background-position: center;
+        padding-bottom: 160px;
+        overflow: hidden;
+    }
+    /* Shift music hero text lower on mobile */
+    .music-page .hero-block {
+        top: 90px;
+    }
+    .music-page .hero-tagline {
+        margin-top: 8px;
+    }
     .hero-home {
         min-height: 90vh;
         padding-top: 100px;
@@ -1100,6 +1112,10 @@ header.show-title .site-title {
         text-align: center;
         left: 50%;
         transform: translateX(-50%);
+    }
+    /* Lower music hero title specifically on mobile */
+    .music-page .hero-name-large {
+        top: 60%;
     }
 
     .hero-tagline {
@@ -1229,6 +1245,14 @@ header.show-title .site-title {
         height: 260px;
     }
 
+    /* Keep the music hero vignette fully visible on small screens */
+    .music-hero .hero-bottom-gradient {
+        height: 440px;
+        left: 0;
+        right: 0;
+        bottom: -120px;
+    }
+
     /* Soften the silhouette base on mobile */
     #shows-preview::before,
     .shows-page-silhouette {
@@ -1255,6 +1279,10 @@ header.show-title .site-title {
         max-width: 520px;
         width: 94vw;
         margin: 0 auto;
+    }
+    /* Shift music hero text lower on very small screens */
+    .music-page .hero-block {
+        top: 110px;
     }
 
     .section-gradient,
@@ -1287,6 +1315,10 @@ header.show-title .site-title {
         text-align: center;
         left: 50%;
         transform: translateX(-50%);
+    }
+    /* Lower music hero title specifically on very small screens */
+    .music-page .hero-name-large {
+        top: 40%;
     }
 
     .hero-tagline {
