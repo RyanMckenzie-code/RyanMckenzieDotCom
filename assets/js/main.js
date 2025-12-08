@@ -62,6 +62,7 @@ if (menuToggle && leftNav) {
   menuToggle.addEventListener("click", () => {
     const open = leftNav.classList.toggle("open");
     menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    menuToggle.classList.toggle("open", open);
   });
 }
 
