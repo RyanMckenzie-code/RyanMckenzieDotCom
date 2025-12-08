@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="contact-page">
+
+<!-- ===================== HEADER ===================== -->
+<header id="nav">
+  <div class="nav-inner">
+
+    <!-- LEFT NAV -->
+    <nav class="left-nav">
+      <ul>
+        <li><a href="music.html">Music</a></li>
+        <li><a href="shows.html">Shows</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- MOBILE MENU BUTTON -->
+    <button id="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- CENTER TITLE -->
+    <a href="index.html" class="site-title folk-title">RYAN MCKENZIE</a>
+
+    <!-- RIGHT SOCIAL ICONS -->
+    <div class="header-icons">
+      <a href="#"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
+      <a href="#"><img src="assets/icons/spotify.svg" class="icon" alt="Spotify"></a>
+      <a href="#"><img src="assets/icons/apple-music.svg" class="icon" alt="Apple Music"></a>
+      <a href="#"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
+      <a href="#"><img src="assets/icons/youtube.svg" class="icon" alt="YouTube"></a>
+    </div>
+
+  </div>
+</header>
+
+
+
+<!-- ===================== CONTACT FORM ===================== -->
+<section id="contact-page-section" class="home-section">
+
+  <div class="section-bg contact-page-bg"></div>
+
+  <div class="section-gradient top-gradient"></div>
+  <div class="section-gradient bottom-gradient"></div>
+
+  <div class="section-content fade">
+    <h2 class="section-title folk-title">Reach Out</h2>
+    <p class="section-description">Fill in the details and we'll get back to you.</p>
+
+    <form id="contact-form" class="contact-page-form" action="https://formspree.io/f/xblnagoa" method="POST">
+      <div class="form-row">
+        <input type="text" name="name" class="contact-input" placeholder="Your Name" required>
+        <input type="email" name="email" class="contact-input" placeholder="Your Email" required>
+      </div>
+      <input type="text" name="subject" class="contact-input" placeholder="Subject">
+      <textarea name="message" class="contact-textarea" rows="5" placeholder="Your Message" required></textarea>
+      <input type="text" name="_gotcha" class="honeypot" aria-hidden="true" tabindex="-1" autocomplete="off">
+      <button type="submit" class="section-button">Send Message</button>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+  </div>
+
+  <div class="hero-bottom-gradient"></div>
+</section>
+
+
+<!-- FILM GRAIN -->
+<div class="film-grain"></div>
+
+<script>
+  // Contact form fetch submit (keeps the user on the page)
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    const statusEl = contactForm.querySelector('.form-status');
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (statusEl) statusEl.textContent = 'Sending...';
+      const data = new FormData(contactForm);
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' },
+        });
+        if (res.ok) {
+          if (statusEl) statusEl.textContent = 'Thanks—your message is on its way.';
+          contactForm.reset();
+        } else {
+          if (statusEl) statusEl.textContent = 'There was a problem sending. Please try again.';
+        }
+      } catch (err) {
+        if (statusEl) statusEl.textContent = 'Network error. Please try again.';
+      }
+    });
+  }
+</script>
+
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>
+
