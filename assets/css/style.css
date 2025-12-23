@@ -1275,8 +1275,13 @@ header.show-title .site-title {
 @media (max-width: 820px) {
     /* Keep mobile previews comfortable while still top-aligned */
     .home-page .home-section {
-        padding: 96px 1rem 82px;
+        padding: 96px 0 82px;
         margin-bottom: 0;
+        width: 100vw;
+        max-width: none;
+        margin-left: 0;
+        margin-right: 0;
+        box-sizing: border-box;
     }
 
     .home-page #shows-preview.home-section {
@@ -1377,8 +1382,8 @@ header.show-title .site-title {
         min-height: 90vh;
         padding-top: 100px;
         background-position: center;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 0;
+        padding-right: 0;
         box-sizing: border-box;
     }
 
@@ -1500,11 +1505,12 @@ header.show-title .site-title {
 
     .home-section {
         min-height: auto;
-        padding: 96px 1rem 82px;
+        padding: 96px 0 82px;
         align-items: flex-start;
-        max-width: 640px;
-        width: 94vw;
-        margin: 0 auto;
+        max-width: none;
+        width: 100vw;
+        margin: 0;
+        box-sizing: border-box;
     }
 
     .section-title {
@@ -1549,8 +1555,11 @@ header.show-title .site-title {
     .video-list,
     .music-tracks {
         max-width: 560px;
-        width: 92vw;
+        width: 100%;
         margin: 0 auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
     }
 
     /* Contact page centering and overflow guard */
@@ -1669,8 +1678,8 @@ header.show-title .site-title {
         min-height: auto;
         padding-top: 90px;
         padding-bottom: 40px;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 0;
+        padding-right: 0;
         box-sizing: border-box;
     }
 
@@ -1697,10 +1706,11 @@ header.show-title .site-title {
     }
 
     .home-section {
-        padding: 90px 1rem 70px;
-        max-width: 520px;
-        width: 94vw;
-        margin: 0 auto;
+        padding: 90px 0 70px;
+        max-width: none;
+        width: 100vw;
+        margin: 0;
+        box-sizing: border-box;
     }
 
     .home-page #shows-preview.home-section {
@@ -1761,7 +1771,10 @@ header.show-title .site-title {
     .video-list,
     .music-tracks {
         max-width: 520px;
-        width: 94vw;
+        width: 100%;
         margin: 0 auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
     }
 }
