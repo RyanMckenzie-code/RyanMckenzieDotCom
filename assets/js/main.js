@@ -90,6 +90,25 @@ if (window.location.pathname.endsWith("index.html") || window.location.pathname 
 
 
 /* ---------------------------------------
+   HERO INLINE NAV SMOOTH SCROLL (home only)
+---------------------------------------- */
+if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+  document.querySelectorAll(".hero-inline-nav a").forEach((link) => {
+    const href = link.getAttribute("href");
+    const id = href.replace(".html", "") + "-preview";
+    const section = document.getElementById(id);
+
+    if (section) {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        section.scrollIntoView({ behavior: "smooth" });
+      });
+    }
+  });
+}
+
+
+/* ---------------------------------------
    PAGE TRANSITION FADE-OUT
 ---------------------------------------- */
 document.querySelectorAll("a[href]").forEach((a) => {
@@ -108,35 +127,67 @@ document.querySelectorAll("a[href]").forEach((a) => {
 
 /* ---------------------------------------
    SIMPLE HEADER EFFECT ON SCROLL
+   - Hide header while hero is in view on desktop
 ---------------------------------------- */
-window.addEventListener('scroll', () => {
-  const header = document.querySelector('header');
-  const hero = document.querySelector('.hero-home');
-  const bigTitle = document.querySelector('.hero-name-large');
+const header = document.querySelector('header');
+const hero = document.querySelector('.hero-home');
+const bigTitles = document.querySelectorAll('.hero-name-large');
 
-  // Always show header title on music page without waiting for scroll.
+let heroVisible = true;
+
+if (hero) {
+  const heroObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        heroVisible = entry.isIntersecting;
+        updateHeaderState();
+      });
+    },
+    { threshold: 0.3 }
+  );
+  heroObserver.observe(hero);
+}
+
+const isMobileViewport = () => window.innerWidth <= 820;
+
+function updateHeaderState() {
+  if (!header) return;
+
+  // Always show header/title on music page.
   if (document.body.classList.contains('music-page')) {
     header.classList.add('show-title');
-    if (bigTitle) bigTitle.style.opacity = 1;
+    header.classList.remove('header-hidden');
+    bigTitles.forEach((title) => (title.style.opacity = 1));
     return;
   }
 
-  // If there's no hero (non-home pages), keep the header title visible.
+  // If there's no hero (non-home pages), keep header visible.
   if (!hero) {
     header.classList.add('show-title');
+    header.classList.remove('header-hidden');
     return;
+  }
+
+  // Hide header on desktop while hero is visible.
+  if (!isMobileViewport() && heroVisible) {
+    header.classList.add('header-hidden');
+  } else {
+    header.classList.remove('header-hidden');
   }
 
   const heroHeight = hero.offsetHeight;
 
   if (window.scrollY > heroHeight - 120) {
-      header.classList.add('show-title');
-      if (bigTitle) bigTitle.style.opacity = 0;
+    header.classList.add('show-title');
+    bigTitles.forEach((title) => (title.style.opacity = 0));
   } else {
-      header.classList.remove('show-title');
-      if (bigTitle) bigTitle.style.opacity = 1;
+    header.classList.remove('show-title');
+    bigTitles.forEach((title) => (title.style.opacity = 1));
   }
-});
+}
+
+window.addEventListener('scroll', updateHeaderState);
+window.addEventListener('resize', updateHeaderState);
 
 
 
@@ -160,7 +211,8 @@ if (lb) {
   lb.addEventListener("click", () => (lb.style.display = "none"));
 }
 window.addEventListener('load', () => {
-  document.querySelector('.hero-name-large').classList.add('show');
+  bigTitles.forEach((title) => title.classList.add('show'));
+  updateHeaderState();
 });
 
 /* ---------------------------------------
