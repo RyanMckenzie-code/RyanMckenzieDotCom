@@ -1397,7 +1397,9 @@ header.show-title .site-title {
 
     .home-page .hero-home,
     .home-page .home-section {
-        min-height: calc(100vh - 82px);
+        min-height: 100svh;
+        min-height: 100dvh;
+        height: auto;
         box-sizing: border-box;
         scroll-snap-align: start;
         scroll-snap-stop: always;
