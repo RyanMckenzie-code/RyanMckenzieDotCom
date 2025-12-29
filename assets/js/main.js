@@ -40,7 +40,16 @@ const bgObserver = new IntersectionObserver((entries) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("active");
       entry.target.classList.remove("inactive");
+      entry.target.dataset.hasActivated = "true";
+      // Keep music preview active after first reveal
+      if (entry.target.id === "music-preview") {
+        bgObserver.unobserve(entry.target);
+      }
     } else {
+      // Don't fade music-preview back out once shown
+      if (entry.target.id === "music-preview" && entry.target.dataset.hasActivated === "true") {
+        return;
+      }
       entry.target.classList.remove("active");
       entry.target.classList.add("inactive");
     }
@@ -215,146 +224,29 @@ window.addEventListener('load', () => {
   updateHeaderState();
 });
 
-/* ---------------------------------------
-   INSTAGRAM EMBED MODAL (header button)
----------------------------------------- */
-function attachInstagramEmbed() {
-  const instaIcon = document.querySelector('.header-icons img[alt="Instagram"]');
-  if (!instaIcon) return;
+const isMobileDevice = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-  const parentLink = instaIcon.closest('a');
-  if (!parentLink) return;
+function wireSocialLinks() {
+  const socialLinks = document.querySelectorAll('a.social-link');
+  if (!socialLinks.length) return;
 
-  const existingModal = document.getElementById('insta-embed-modal');
+  socialLinks.forEach((link) => {
+    const appUrl = link.getAttribute('data-app-url');
+    const webUrl = link.getAttribute('href');
 
-  // Build modal once
-  const ensureModal = () => {
-    let modal = document.getElementById('insta-embed-modal');
-    if (modal) return modal;
-
-    modal = document.createElement('div');
-    modal.id = 'insta-embed-modal';
-    modal.innerHTML = `
-      <div class="insta-embed-backdrop"></div>
-      <div class="insta-embed-content">
-        <button class="insta-close" aria-label="Close Instagram embed">×</button>
-        <div class="insta-embed-body">
-          <blockquote class="instagram-media"
-            data-instgrm-permalink="https://www.instagram.com/ryan.mckenzie.music/?utm_source=ig_embed&amp;utm_campaign=loading"
-            data-instgrm-version="14"
-            style="background:#FFF; border:0; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,0.4); margin:0; padding:0; width:100%; max-width:540px;">
-          </blockquote>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(modal);
-
-    // Load Instagram embed script once
-    if (!document.querySelector('script[src*="instagram.com/embed.js"]')) {
-      const s = document.createElement('script');
-      s.src = "//www.instagram.com/embed.js";
-      s.async = true;
-      document.body.appendChild(s);
-    } else if (window.instgrm && window.instgrm.Embeds) {
-      window.instgrm.Embeds.process();
-    }
-
-    const closeModal = () => modal.classList.remove('show');
-    modal.querySelector('.insta-close').addEventListener('click', closeModal);
-    modal.querySelector('.insta-embed-backdrop').addEventListener('click', closeModal);
-    return modal;
-  };
-
-  parentLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    const modal = ensureModal();
-    modal.classList.add('show');
-    if (window.instgrm && window.instgrm.Embeds) {
-      window.instgrm.Embeds.process();
-    }
+    link.addEventListener('click', (e) => {
+      if (!isMobileDevice() || !appUrl || !webUrl) return;
+      e.preventDefault();
+      // Try the app first, then fall back to the web link.
+      window.location.href = appUrl;
+      setTimeout(() => {
+        window.location.href = webUrl;
+      }, 550);
+    });
   });
 }
 
-attachInstagramEmbed();
-
-/* ---------------------------------------
-   FACEBOOK PAGE EMBED MODAL (header button)
----------------------------------------- */
-function attachFacebookEmbed() {
-  const fbIcon = document.querySelector('.header-icons img[alt="Facebook"]');
-  if (!fbIcon) return;
-
-  const parentLink = fbIcon.closest('a');
-  if (!parentLink) return;
-
-  const ensureFBRoot = () => {
-    if (!document.getElementById('fb-root')) {
-      const fbRoot = document.createElement('div');
-      fbRoot.id = 'fb-root';
-      document.body.appendChild(fbRoot);
-    }
-  };
-
-  const ensureSDK = () => {
-    if (window.FB) return;
-    ensureFBRoot();
-    const s = document.createElement('script');
-    s.async = true;
-    s.defer = true;
-    s.crossOrigin = "anonymous";
-    s.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v20.0";
-    document.body.appendChild(s);
-  };
-
-  const ensureModal = () => {
-    let modal = document.getElementById('fb-embed-modal');
-    if (modal) return modal;
-
-    modal = document.createElement('div');
-    modal.id = 'fb-embed-modal';
-    modal.innerHTML = `
-      <div class="fb-embed-backdrop"></div>
-      <div class="fb-embed-content">
-        <button class="fb-close" aria-label="Close Facebook embed">×</button>
-        <div class="fb-embed-body">
-          <div class="fb-page"
-            data-href="https://www.facebook.com/profile.php?id=61574476614038&amp;open_field=website&amp;sk=about_contact_and_basic_info"
-            data-tabs="timeline"
-            data-width="500"
-            data-height="420"
-            data-small-header="true"
-            data-adapt-container-width="true"
-            data-hide-cover="false"
-            data-show-facepile="true">
-            <blockquote
-              cite="https://www.facebook.com/profile.php?id=61574476614038&amp;open_field=website&amp;sk=about_contact_and_basic_info"
-              class="fb-xfbml-parse-ignore">
-              <a href="https://www.facebook.com/profile.php?id=61574476614038&amp;open_field=website&amp;sk=about_contact_and_basic_info">Ryan McKenzie Music</a>
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    `;
-    document.body.appendChild(modal);
-
-    const closeModal = () => modal.classList.remove('show');
-    modal.querySelector('.fb-close').addEventListener('click', closeModal);
-    modal.querySelector('.fb-embed-backdrop').addEventListener('click', closeModal);
-    return modal;
-  };
-
-  parentLink.addEventListener('click', (e) => {
-    e.preventDefault();
-    ensureSDK();
-    const modal = ensureModal();
-    modal.classList.add('show');
-    if (window.FB && window.FB.XFBML) {
-      window.FB.XFBML.parse(modal);
-    }
-  });
-}
-
-attachFacebookEmbed();
+wireSocialLinks();
 
 
 /* ---------------------------------------
@@ -374,3 +266,4 @@ window.addEventListener("scroll", () => {
   prev = cur;
 });
 */
+

@@ -206,6 +206,54 @@ header {
     text-shadow: 0 8px 28px rgba(0,0,0,.7);
 }
 
+.hero-social-icons {
+    display: flex;
+    gap: 1.6rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 46px auto 20px;
+    position: relative;
+    z-index: 6;
+    text-align: center;
+}
+
+/* Desktop: keep hero content consistently centered and bounded */
+@media (min-width: 1021px) {
+    .hero-home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-block,
+    .hero-social-icons {
+        max-width: 960px;
+        width: 100%;
+    }
+}
+
+.hero-social-icons .icon {
+    width: 26px;
+    height: 26px;
+    filter: invert(88%) sepia(5%) saturate(0%) hue-rotate(180deg) brightness(100%) contrast(88%);
+    transition: 0.25s ease;
+}
+
+.hero-social-icons a:hover .icon {
+    filter: brightness(0) saturate(100%) invert(79%) sepia(34%) 
+            saturate(354%) hue-rotate(351deg) brightness(94%) contrast(89%);
+    transform: translateY(-2px);
+}
+
+/* Slightly brighter default for YouTube icons */
+.icon[alt="YouTube"] {
+    filter: invert(93%) sepia(5%) saturate(0%) hue-rotate(180deg) brightness(114%) contrast(90%);
+}
+
+a:hover .icon[alt="YouTube"] {
+    filter: brightness(0) saturate(100%) invert(84%) sepia(20%) saturate(230%) hue-rotate(351deg) brightness(106%) contrast(90%);
+}
+
 .hero-tagline {
     font-family: 'Special Elite', monospace !important;
     font-size: 1.3rem;
@@ -564,6 +612,17 @@ button {
         url('../img/music_bg.jpeg');
 }
 
+.music-page .hero-home {
+    padding-bottom: 220px;
+}
+
+.music-page-content {
+    margin: 260px auto 0;
+    padding: 0 1.5rem 120px;
+    position: relative;
+    z-index: 5; /* sit above gradients */
+}
+
 .music-page-bg {
     background-image:
         linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.35)),
@@ -811,7 +870,7 @@ button {
 .hero-inline-links a {
     color: #e7dfd7;
     text-decoration: none;
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     -webkit-text-stroke: 0.6px rgba(255, 232, 188, 0.35);
     text-shadow:
         0 1px 2px rgba(0,0,0,0.4),
@@ -1359,6 +1418,9 @@ header.show-title .site-title {
         transform: translateX(-50%);
         position: absolute;
     }
+    .hero-social-icons {
+        display: none;
+    }
     /* Remove top gradients on mobile for brighter text */
     .music-hero {
         background:
@@ -1371,10 +1433,18 @@ header.show-title .site-title {
       #music-preview .section-bg {
           background-position: right center;
       }
-      /* Shift music hero text lower on mobile */
-      .music-page .hero-block {
-          top: 90px;
-      }
+    /* Shift music hero text lower on mobile */
+    .music-page .hero-block {
+        top: 90px;
+    }
+    .hero-social-icons {
+        margin-top: 34px;
+        gap: 1.1rem;
+    }
+    .music-page-content {
+        margin-top: 160px;
+        padding-bottom: 80px;
+    }
     .music-page .hero-tagline {
         margin-top: 8px;
     }
@@ -1698,6 +1768,13 @@ header.show-title .site-title {
     /* Shift music hero text lower on very small screens */
     .music-page .hero-block {
         top: 110px;
+    }
+    .hero-social-icons {
+        display: none;
+    }
+    .music-page-content {
+        margin-top: 140px;
+        padding-bottom: 70px;
     }
 
     .section-gradient,
