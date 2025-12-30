@@ -1437,18 +1437,18 @@ header.show-title .site-title {
       }
     /* Shift music hero text lower on mobile */
     .music-page .hero-block {
-        top: 90px;
+        top: 140px;
     }
     .hero-social-icons {
         margin-top: 34px;
         gap: 1.1rem;
     }
     .music-page-content {
-        margin-top: 160px;
+        margin-top: 200px;
         padding-bottom: 80px;
     }
     .music-page .hero-tagline {
-        margin-top: 8px;
+        margin-top: 14px;
     }
     .hero-home {
         min-height: 90vh;
@@ -1561,7 +1561,7 @@ header.show-title .site-title {
     }
     /* Lower music hero title specifically on mobile */
     .music-page .hero-name-large {
-        top: 60%;
+        top: 34%;
     }
 
     .hero-tagline {
@@ -1769,13 +1769,13 @@ header.show-title .site-title {
     }
     /* Shift music hero text lower on very small screens */
     .music-page .hero-block {
-        top: 110px;
+        top: 150px;
     }
     .hero-social-icons {
         display: none;
     }
     .music-page-content {
-        margin-top: 140px;
+        margin-top: 210px;
         padding-bottom: 70px;
     }
 
@@ -1818,7 +1818,7 @@ header.show-title .site-title {
     }
     /* Lower music hero title specifically on very small screens */
     .music-page .hero-name-large {
-        top: 40%;
+        top: 36%;
     }
 
     .hero-tagline {
