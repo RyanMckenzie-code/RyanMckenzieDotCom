@@ -28,7 +28,7 @@
       <ul>
         <li><a href="music.html">Music</a></li>
         <li><a href="shows.html">Shows</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="gallery.html">EPK</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -45,7 +45,7 @@
 
     <!-- RIGHT SOCIAL ICONS -->
     <div class="header-icons">
-      <a class="social-link" href="https://www.facebook.com/profile.php?id=61574476614038" data-app-url="fb://profile/61574476614038"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
+      <a class="social-link" href="https://www.facebook.com/ry.mckenzie.music" data-app-url="fb://profile/ry.mckenzie.music"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
       <a class="social-link" href="https://open.spotify.com/" data-app-url="spotify://"><img src="assets/icons/spotify.svg" class="icon" alt="Spotify"></a>
       <a class="social-link" href="https://music.apple.com/" data-app-url="music://"><img src="assets/icons/apple-music.svg" class="icon" alt="Apple Music"></a>
       <a class="social-link" href="https://www.instagram.com/ryan.mckenzie.music/" data-app-url="instagram://user?username=ryan.mckenzie.music"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
@@ -104,6 +104,13 @@
         </div>
   
         <a href="#" class="section-button shows-view-all">More Dates Coming Soon</a>
+
+        <!-- Availability calendar -->
+        <div class="availability">
+          <h3 class="availability-title folk-title">Availability Snapshot</h3>
+          <p class="availability-note">Booked dates are shown in red; open days are green. Reach out to lock in an open day.</p>
+          <div id="availability-grid" class="calendar-container"></div>
+        </div>
   
     </div>
   
@@ -126,7 +133,7 @@
       <ul>
         <li><a href="music.html">Music</a></li>
         <li><a href="shows.html">Shows</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="gallery.html">EPK</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -135,7 +142,7 @@
       <h3 class="footer-heading">Stay in Touch</h3>
       <p><a href="contact.html">Contact</a></p>
       <div class="footer-social">
-        <a class="social-link" href="https://www.facebook.com/profile.php?id=61574476614038" data-app-url="fb://profile/61574476614038"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
+        <a class="social-link" href="https://www.facebook.com/ry.mckenzie.music" data-app-url="fb://profile/ry.mckenzie.music"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
         <a class="social-link" href="https://open.spotify.com/" data-app-url="spotify://"><img src="assets/icons/spotify.svg" class="icon" alt="Spotify"></a>
         <a class="social-link" href="https://music.apple.com/" data-app-url="music://"><img src="assets/icons/apple-music.svg" class="icon" alt="Apple Music"></a>
         <a class="social-link" href="https://www.instagram.com/ryan.mckenzie.music/" data-app-url="instagram://user?username=ryan.mckenzie.music"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
@@ -155,6 +162,95 @@
 <div class="film-grain"></div>
 
 <script src="assets/js/main.js"></script>
+<script>
+  // Lightweight availability calendar
+  (function() {
+    const monthMap = {
+      JAN: 0, FEB: 1, MAR: 2, APR: 3, MAY: 4, JUN: 5,
+      JUL: 6, AUG: 7, SEP: 8, OCT: 9, NOV: 10, DEC: 11
+    };
+
+    const pad = (n) => n.toString().padStart(2, '0');
+
+    function parseTourDate(str) {
+      if (!str) return null;
+      const cleaned = str.replace(',', '').replace(/(\d+)(st|nd|rd|th)/i, '$1').trim();
+      const parts = cleaned.split(/\s+/); // e.g. ["JAN","2","2026"]
+      if (parts.length < 3) return null;
+      const [monStr, dayStr, yearStr] = parts;
+      const month = monthMap[monStr.toUpperCase()];
+      const day = parseInt(dayStr, 10);
+      const year = parseInt(yearStr, 10);
+      if (month === undefined || Number.isNaN(day) || Number.isNaN(year)) return null;
+      return `${year}-${pad(month + 1)}-${pad(day)}`;
+    }
+
+    // Pull booked dates from the tour list so the calendar matches the shows above.
+    const booked = Array.from(document.querySelectorAll('.tour-date'))
+      .map((el) => parseTourDate(el.textContent))
+      .filter(Boolean);
+
+    const grid = document.getElementById('availability-grid');
+    if (!grid) return;
+
+    const bookedSet = new Set(booked);
+    const monthsToShow = 12;
+    const today = new Date();
+
+    function buildMonth(year, month) {
+      const firstDay = new Date(year, month, 1);
+      const lastDay = new Date(year, month + 1, 0);
+      const monthName = firstDay.toLocaleString('default', { month: 'long' });
+      const wrapper = document.createElement('div');
+      wrapper.className = 'calendar-month';
+      const header = document.createElement('div');
+      header.className = 'calendar-head';
+      header.textContent = `${monthName} ${year}`;
+      wrapper.appendChild(header);
+
+      const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      const dayRow = document.createElement('div');
+      dayRow.className = 'calendar-row calendar-days';
+      dayNames.forEach(d => {
+        const dn = document.createElement('div');
+        dn.className = 'calendar-cell calendar-dayname';
+        dn.textContent = d;
+        dayRow.appendChild(dn);
+      });
+      wrapper.appendChild(dayRow);
+
+      const datesRow = document.createElement('div');
+      datesRow.className = 'calendar-grid';
+
+      // leading blanks
+      for (let i = 0; i < firstDay.getDay(); i++) {
+        const blank = document.createElement('div');
+        blank.className = 'calendar-cell blank';
+        datesRow.appendChild(blank);
+      }
+
+      for (let d = 1; d <= lastDay.getDate(); d++) {
+        const cell = document.createElement('div');
+        cell.className = 'calendar-cell';
+        const dateStr = `${year}-${pad(month + 1)}-${pad(d)}`;
+        if (bookedSet.has(dateStr)) {
+          cell.classList.add('booked');
+        }
+        cell.textContent = d;
+        datesRow.appendChild(cell);
+      }
+
+      wrapper.appendChild(datesRow);
+      return wrapper;
+    }
+
+    for (let i = 0; i < monthsToShow; i++) {
+      const dt = new Date(today.getFullYear(), today.getMonth() + i, 1);
+      grid.appendChild(buildMonth(dt.getFullYear(), dt.getMonth()));
+    }
+  })();
+</script>
 
 </body>
 </html>
+

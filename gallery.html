@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gallery</title>
+  <title>Electronic Press Kit</title>
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -14,73 +14,307 @@
   <link href="https://fonts.googleapis.com/css2?family=Gloock&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Critical inline styles to prevent white flash on first paint -->
+  <style>
+    html, body { background: #211c1a; color: #C8C8C8; }
+    body.preload { opacity: 0; }
+    body.fade-out { opacity: 0; background: #211c1a; }
+  </style>
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body class="epk-page preload">
 
 <!-- ===================== HEADER ===================== -->
 <header id="nav">
   <div class="nav-inner">
-
-    <!-- LEFT NAV -->
     <nav class="left-nav">
       <ul>
         <li><a href="music.html">Music</a></li>
         <li><a href="shows.html">Shows</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="gallery.html">EPK</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
 
-    <!-- MOBILE MENU BUTTON -->
     <button id="menu-toggle" aria-expanded="false" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <!-- CENTER TITLE -->
     <a href="index.html" class="site-title folk-title">RYAN MCKENZIE</a>
 
-    <!-- RIGHT SOCIAL ICONS -->
     <div class="header-icons">
-      <a class="social-link" href="https://www.facebook.com/profile.php?id=61574476614038" data-app-url="fb://profile/61574476614038"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
+      <a class="social-link" href="https://www.facebook.com/ry.mckenzie.music" data-app-url="fb://profile/ry.mckenzie.music"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
       <a class="social-link" href="https://open.spotify.com/" data-app-url="spotify://"><img src="assets/icons/spotify.svg" class="icon" alt="Spotify"></a>
       <a class="social-link" href="https://music.apple.com/" data-app-url="music://"><img src="assets/icons/apple-music.svg" class="icon" alt="Apple Music"></a>
       <a class="social-link" href="https://www.instagram.com/ryan.mckenzie.music/" data-app-url="instagram://user?username=ryan.mckenzie.music"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
       <a class="social-link" href="https://www.youtube.com/@Ryan.MckenzieMusic" data-app-url="youtube://www.youtube.com/@Ryan.MckenzieMusic"><img src="assets/icons/youtube.svg" class="icon" alt="YouTube"></a>
     </div>
-
   </div>
 </header>
 
+<!-- Silhouettes -->
+<div class="epk-silhouette s1"></div>
+<div class="epk-silhouette s2"></div>
 
 
-<!-- ===================== VIDEO LIST ===================== -->
-<section id="gallery-videos" class="video-section">
-  <div class="video-list">
-    <h1 class="video-page-title folk-title">Videos</h1>
+<!-- ===================== HERO ===================== -->
+<section class="hero-home gallery-hero epk-hero">
+  <div class="section-gradient top-gradient"></div>
+  <div class="section-gradient bottom-gradient"></div>
+  <h1 class="hero-name-large">Electronic Press Kit</h1>
 
-    <div class="video-card fade">
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/uuWVyHiChjo?start=45" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <div class="hero-block fade">
+    <div class="epk-hero-inner">
+      <div class="epk-hero-copy">
+        <p class="hero-tagline">
+          Acoustic storytelling with a warm, modern folk edge - sets built personally for your rooms.
+        </p>
+        <div class="epk-hero-cta">
+          <a class="section-button booking-trigger" id="epk-booking-open" href="#epk-booking">Book Ryan</a>
+          <a class="section-button secondary" href="#assets">Download assets</a>
+        </div>
       </div>
-      <h3 class="video-title">Guitar Joe</h3>
-      <p class="video-meta">YouTube - Starts at 0:45</p>
+      <div class="epk-hero-photo">
+        <img src="assets/img/EPKmain.jpeg" alt="Ryan McKenzie press photo">
+        <div class="epk-photo-note">Print + web ready</div>
+        <a class="section-button secondary epk-photo-download" href="assets/img/EPKmain.jpeg" download>Download</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom-gradient"></div>
+</section>
+
+
+<!-- ===================== SNAPSHOT ===================== -->
+<section class="epk-section fade">
+  <div class="epk-container">
+    <div class="epk-heading">
+      <p class="epk-kicker">At a Glance</p>
+      <h2 class="section-title folk-title">Show Ready, Business Friendly</h2>
+      <p class="section-description">Straightforward to book, easy to host, and tailored to the tone of your room or event.</p>
     </div>
 
-    <div class="video-card fade">
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/uuWVyHiChjo?start=2509" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="epk-grid stats-grid">
+      <div class="epk-card stat-card">
+        <div class="stat-label">Format</div>
+        <div class="stat-value">Solo acoustic singer-songwriter</div>
       </div>
-      <h3 class="video-title">If I Found Bigfoot</h3>
-      <p class="video-meta">YouTube - Starts at 41:49</p>
+      <div class="epk-card stat-card">
+        <div class="stat-label">Ideal For</div>
+        <div class="stat-value">Listening rooms, taprooms, private gatherings</div>
+      </div>
+      <div class="epk-card stat-card">
+        <div class="stat-label">Sets</div>
+        <div class="stat-value">Flexible pacing for feature or ambiance</div>
+      </div>
+      <div class="epk-card stat-card">
+        <div class="stat-label">Based</div>
+        <div class="stat-value">Massachusetts - available across New England</div>
+      </div>
+      <div class="epk-card stat-card">
+        <div class="stat-label">Footprint</div>
+        <div class="stat-value">Simple vocal + guitar setup; happy to use house PA</div>
+      </div>
+      <div class="epk-card stat-card">
+        <div class="stat-label">Contact</div>
+        <div class="stat-value"><a href="#epk-booking" class="stat-link booking-trigger">Hold a date</a></div>
+      </div>
     </div>
-
   </div>
 </section>
 
+
+<!-- ===================== BIO + OFFERING ===================== -->
+<section class="epk-section fade">
+  <div class="epk-container epk-two-col">
+    <div class="epk-panel">
+      <p class="epk-kicker">Bio</p>
+      <h3 class="epk-subtitle">Modern folk with a storyteller's pulse</h3>
+      <p class="epk-body">Ryan McKenzie pairs percussive acoustic guitar with honest, conversational lyrics. The set moves from intimate ballads to driving rhythms, keeping audiences engaged without overpowering the room.</p>
+      <p class="epk-body">Expect original songs with a few familiar favorites woven in, delivered with the same care whether it's a seated listening room or a busy taproom.</p>
+    </div>
+    <div class="epk-panel">
+      <p class="epk-kicker">What You'll Get</p>
+      <h3 class="epk-subtitle">A reliable, low-lift booking</h3>
+      <ul class="epk-list">
+        <li>Adjustable set lengths and volume to match your schedule.</li>
+        <li>Professional communication before, during, and after the show.</li>
+        <li>Original material plus tasteful covers tailored to the crowd.</li>
+        <li>Compact stage footprint that fits tight corners or small risers.</li>
+      </ul>
+      <div class="epk-cta-row">
+        <a class="section-button booking-trigger" href="#epk-booking">Request availability</a>
+        <a class="section-button secondary" href="shows.html">See recent rooms</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== MUSIC & VIDEO ===================== -->
+<section class="epk-section fade">
+  <div class="epk-container epk-two-col">
+    <div class="epk-panel">
+      <p class="epk-kicker">Focus Tracks</p>
+      <h3 class="epk-subtitle">Current set highlights</h3>
+      <div class="epk-tracklist">
+        <div class="track-row">
+          <div>
+            <div class="track-name">Burn</div>
+            <div class="track-note">EP in progress</div>
+          </div>
+        </div>
+        <div class="track-row">
+          <div>
+            <div class="track-name">Better Than This</div>
+            <div class="track-note">Unreleased single</div>
+          </div>
+        </div>
+        <div class="track-row">
+          <div>
+            <div class="track-name">If I Found Bigfoot</div>
+            <div class="track-note">Live acoustic favorite</div>
+          </div>
+        </div>
+      </div>
+      <p class="epk-body">Listen to more previews and works in progress on the music page.</p>
+            <div class="covers-preview">
+        <p class="epk-kicker">Crowd Favorite Covers</p>
+        <ul class="epk-list covers-list collapsed">
+          <li>Stand by Me</li>
+          <li>Fast Car</li>
+          <li>Mr. Brightside</li>
+          <li class="extra">Jack and Diane</li>
+          <li class="extra">Tennessee Whiskey</li>
+          <li class="extra">Music For The Soul</li>
+          <li class="extra">Summer of 69'</li>
+          <li class="extra">Listen to The Music</li>
+          <li class="extra">Landslide</li>
+          <li class="extra">Heading South</li>
+          <li class="extra">Stick Season</li>
+        </ul>
+        <div class="covers-actions">
+          <button type="button" class="covers-toggle" aria-expanded="false">Show more</button>
+        </div>
+      </div><a class="section-button secondary" href="music.html">Hear more</a>
+    </div>
+    <div class="epk-panel video-stack">
+      <p class="epk-kicker">Live Video</p>
+      <h3 class="epk-subtitle">See the set in motion</h3>
+      <div class="video-card">
+        <div class="video-embed">
+          <video controls poster="assets/img/EPKmain.jpeg">
+            <source src="assets/img/EPKLiveVideo.MOV" type="video/quicktime">
+            <source src="assets/img/EPKLiveVideo.MOV" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <h3 class="video-title">Lost In Space</h3>
+        <p class="video-meta">Live studio performance (excerpt) - Ryan McKenzie</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== ASSETS & CONTACT ===================== -->
+<section id="assets" class="epk-section fade">
+  <div class="epk-container">
+    <div class="epk-heading">
+      <p class="epk-kicker">Assets</p>
+      <h2 class="section-title folk-title">Download-ready materials</h2>
+      <p class="section-description">Hi-res photos and a quick contact path for bookings, holds, and partnerships.</p>
+    </div>
+
+    <div class="asset-grid">
+      <div class="asset-card">
+        <div class="asset-thumb asset-thumb-vertical" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.5)), url('assets/img/ActionShotVertical.jpeg');"></div>
+        <div class="asset-body">
+          <div>
+            <div class="asset-title">Action Promo Photo</div>
+            <div class="asset-note">Vertical - ready for flyers or socials</div>
+          </div>
+          <a class="section-button secondary" href="assets/img/ActionShotVertical.jpeg" download>Download</a>
+        </div>
+      </div>
+      <div class="asset-card">
+        <div class="asset-thumb" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.5)), url('assets/img/homepage_background.png');"></div>
+        <div class="asset-body">
+          <div>
+            <div class="asset-title">Promo Photo - Horizontal</div>
+            <div class="asset-note">Works for web banners and slides</div>
+          </div>
+          <a class="section-button secondary" href="assets/img/homepage_background.png" download>Download</a>
+        </div>
+      </div>
+      <div class="asset-card">
+        <div class="asset-thumb asset-contact-thumb">
+          <div class="asset-contact">
+            <p class="epk-kicker">Booking & Press</p>
+            <div class="asset-contact-actions">
+              <a class="section-button booking-trigger" href="#epk-booking">Book form</a>
+              <a class="section-button" href="contact.html">Contact form</a>
+              <a class="section-button secondary" href="https://www.instagram.com/ryan.mckenzie.music/" target="_blank" rel="noopener">Message on Instagram</a>
+            </div>
+          </div>
+        </div>
+        <div class="asset-body">
+          <div>
+            <div class="asset-title">Quick response</div>
+            <div class="asset-note">Share dates, room specs, or marketing needs</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== BOOKING FORM ===================== -->
+<section id="epk-booking" class="epk-section fade booking-hidden">
+  <div class="epk-container" id="epk-booking-block">
+    <div class="epk-heading">
+      <p class="epk-kicker">Booking</p>
+      <h2 class="section-title folk-title">Hold a date</h2>
+      <p class="section-description">Share your room, date, and timing. Expect a quick follow-up to lock in details.</p>
+    </div>
+
+    <div class="booking-actions">
+      <button type="button" class="section-button secondary booking-close" id="epk-booking-close">Close</button>
+    </div>
+
+    <form class="epk-booking-form" action="https://formspree.io/f/xblnagoa" method="POST">
+      <div class="booking-grid">
+        <input type="text" name="name" class="contact-input" placeholder="Your name" required>
+        <input type="email" name="email" class="contact-input" placeholder="Your email" required>
+        <input type="text" name="venue" class="contact-input" placeholder="Venue / event name" required>
+        <input type="text" name="location" class="contact-input" placeholder="City / state" required>
+        <div class="booking-calendar-wrapper">
+          <div class="booking-calendar-header">
+            <span>Pick date(s)</span>
+            <span class="booking-calendar-legend">
+              <span class="legend-dot available"></span>Available
+              <span class="legend-dot booked"></span>Booked
+            </span>
+          </div>
+          <div id="booking-calendar" class="calendar-container"></div>
+          <p class="availability-note small">Tap dates to select. Booked dates are disabled.</p>
+          <div class="selected-dates" id="selected-dates"></div>
+          <input type="hidden" name="dates" id="booking-selected-input" required>
+        </div>
+        <input type="text" name="time" class="contact-input" placeholder="Preferred set time(s)">
+      </div>
+      <textarea name="details" class="contact-textarea" rows="4" placeholder="Set length, sound, room vibe, or any notes"></textarea>
+      <input type="hidden" name="subject" value="Booking request from EPK">
+      <input type="text" name="_gotcha" class="honeypot" aria-hidden="true" tabindex="-1" autocomplete="off">
+      <button type="submit" class="section-button">Send Booking Request</button>
+      <p class="form-status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
 
 
 <!-- ===================== FOOTER ===================== -->
@@ -96,7 +330,7 @@
       <ul>
         <li><a href="music.html">Music</a></li>
         <li><a href="shows.html">Shows</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="gallery.html">EPK</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -105,7 +339,7 @@
       <h3 class="footer-heading">Stay in Touch</h3>
       <p><a href="contact.html">Contact</a></p>
       <div class="footer-social">
-        <a class="social-link" href="https://www.facebook.com/profile.php?id=61574476614038" data-app-url="fb://profile/61574476614038"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
+        <a class="social-link" href="https://www.facebook.com/ry.mckenzie.music" data-app-url="fb://profile/ry.mckenzie.music"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
         <a class="social-link" href="https://open.spotify.com/" data-app-url="spotify://"><img src="assets/icons/spotify.svg" class="icon" alt="Spotify"></a>
         <a class="social-link" href="https://music.apple.com/" data-app-url="music://"><img src="assets/icons/apple-music.svg" class="icon" alt="Apple Music"></a>
         <a class="social-link" href="https://www.instagram.com/ryan.mckenzie.music/" data-app-url="instagram://user?username=ryan.mckenzie.music"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
@@ -125,9 +359,12 @@
 <div class="film-grain"></div>
 
 <script src="assets/js/main.js"></script>
-
 </body>
 </html>
+
+
+
+
 
 
 
