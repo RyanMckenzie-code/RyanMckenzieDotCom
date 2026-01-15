@@ -163,11 +163,7 @@ function updateHeaderState() {
   if (!header) return;
 
   // Always show header/title on music page.
-<<<<<<< HEAD
   if (document.body.classList.contains('music-page') || document.body.classList.contains('epk-page')) {
-=======
-  if (document.body.classList.contains('music-page')) {
->>>>>>> 715324f5fc7679593e8c75bfde764d6dcf30237a
     header.classList.add('show-title');
     header.classList.remove('header-hidden');
     bigTitles.forEach((title) => (title.style.opacity = 1));
@@ -251,7 +247,6 @@ function wireSocialLinks() {
 }
 
 wireSocialLinks();
-<<<<<<< HEAD
 
 /* ---------------------------------------
    EPK BOOKING CLOSE
@@ -473,8 +468,6 @@ coversToggles.forEach((btn) => {
     btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
   });
 });
-=======
->>>>>>> 715324f5fc7679593e8c75bfde764d6dcf30237a
 
 
 /* ---------------------------------------
