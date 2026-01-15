@@ -1,6 +1,6 @@
 # RyanMckenzieDotCom
 
-Static website project containing pages: `index.html`, `contact.html`, `gallery.html`, `music.html`, `shows.html` and `assets/` for CSS, JS, images and fonts.
+Static website project containing pages: `index.html`, `contact.html`, `epk.html`, `music.html`, `shows.html` and `assets/` for CSS, JS, images and fonts.
 
 ## Local usage
 
