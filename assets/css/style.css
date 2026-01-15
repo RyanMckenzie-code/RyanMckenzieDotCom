@@ -1043,6 +1043,18 @@ header.show-title .site-title {
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,0) 100%);
 }
+
+.shows-page .shows-page-silhouette {
+    position: absolute;
+    left: 50%;
+    right: auto;
+    top: -16vh;
+    bottom: auto;
+    height: 190vh;
+    width: 90%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
 /* Fading elements driven by fadeObserver */
 .fade {
     opacity: 0;

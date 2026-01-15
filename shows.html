@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<body class="shows-page">
 
 <!-- ===================== HEADER ===================== -->
 <header id="nav">
@@ -253,6 +253,52 @@
 
 <script src="assets/js/main.js"></script>
 <script>
+  // Remove past dates from the list automatically.
+  (function() {
+    const monthMap = {
+      JAN: 0, FEB: 1, MAR: 2, APR: 3, MAY: 4, JUN: 5,
+      JUL: 6, AUG: 7, SEP: 8, OCT: 9, NOV: 10, DEC: 11
+    };
+
+    function parseTourDate(str) {
+      if (!str) return null;
+      const cleaned = str.replace(',', '').replace(/(\d+)(st|nd|rd|th)/i, '$1').trim();
+      const parts = cleaned.split(/\s+/);
+      if (parts.length < 3) return null;
+      const [monStr, dayStr, yearStr] = parts;
+      const month = monthMap[monStr.toUpperCase()];
+      const day = parseInt(dayStr, 10);
+      const year = parseInt(yearStr, 10);
+      if (month === undefined || Number.isNaN(day) || Number.isNaN(year)) return null;
+      return new Date(year, month, day);
+    }
+
+    function startOfToday() {
+      const now = new Date();
+      return new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    }
+
+    const today = startOfToday();
+    const tourRows = Array.from(document.querySelectorAll('.tour-row'));
+
+    tourRows.forEach((row) => {
+      const dateEl = row.querySelector('.tour-date');
+      const showDate = dateEl ? parseTourDate(dateEl.textContent) : null;
+      if (!showDate) return;
+      if (showDate < today) {
+        row.remove();
+      }
+    });
+
+    const tourList = document.querySelector('.tour-list');
+    if (tourList && !tourList.querySelector('.tour-row')) {
+      const empty = document.createElement('p');
+      empty.className = 'availability-note';
+      empty.textContent = 'More dates coming soon.';
+      tourList.appendChild(empty);
+    }
+  })();
+
   // Lightweight availability calendar
   (function() {
     const monthMap = {
