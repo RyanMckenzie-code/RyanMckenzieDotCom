@@ -2414,6 +2414,13 @@ header.show-title .site-title {
         display: none;
     }
 
+    /* Nudge the shows-page silhouette up so it sits closer to the upcoming dates */
+    .shows-page .shows-page-silhouette {
+        position: fixed;
+        top: 4vh;
+        background-position: center top;
+    }
+
     /* Soften the silhouette base on mobile */
     #shows-preview::before,
     .shows-page-silhouette {
@@ -2424,6 +2431,12 @@ header.show-title .site-title {
         width: 100%;
         left: 0;
         right: 0;
+    }
+
+    /* Lift the home preview silhouette on mobile only */
+    .home-page #shows-preview .shows-page-silhouette {
+        top: 24vh;
+        background-position: center top;
     }
     
     .footer-inner {
