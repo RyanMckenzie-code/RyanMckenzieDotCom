@@ -89,6 +89,7 @@ if (window.location.pathname.endsWith("index.html") || window.location.pathname 
 
     if (section) {
       link.addEventListener("click", (e) => {
+        if (link.target === '_blank') return;
         e.preventDefault();
         section.scrollIntoView({ behavior: "smooth" });
       });
@@ -109,6 +110,7 @@ if (window.location.pathname.endsWith("index.html") || window.location.pathname 
 
     if (section) {
       link.addEventListener("click", (e) => {
+        if (link.target === '_blank') return;
         e.preventDefault();
         section.scrollIntoView({ behavior: "smooth" });
       });
@@ -125,6 +127,7 @@ document.querySelectorAll("a[href]").forEach((a) => {
 
   if (url && !url.startsWith("http") && !url.startsWith("#")) {
     a.addEventListener("click", (e) => {
+      if (a.hasAttribute('download') || a.target === '_blank' || e.defaultPrevented || /^(mailto:|tel:)/i.test(url)) return;
       e.preventDefault();
       document.body.classList.add("fade-out");
       setTimeout(() => (window.location = url), 350);
@@ -226,6 +229,19 @@ window.addEventListener('load', () => {
 
 const isMobileDevice = () => /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
+// Keep our pages in this tab and open other websites in a new tab.
+document.querySelectorAll('a[href]').forEach((link) => {
+  const href = link.getAttribute('href').trim();
+  if (!href || /^(#|mailto:|tel:|javascript:)/i.test(href)) return;
+  const destination = new URL(href, window.location.href);
+  if (/^https?:$/.test(destination.protocol) && destination.origin !== window.location.origin) {
+    link.target = '_blank';
+    link.relList.add('noopener', 'noreferrer');
+  } else {
+    link.target = '_self';
+  }
+});
+
 function wireSocialLinks() {
   const socialLinks = document.querySelectorAll('a.social-link');
   if (!socialLinks.length) return;
@@ -235,7 +251,7 @@ function wireSocialLinks() {
     const webUrl = link.getAttribute('href');
 
     link.addEventListener('click', (e) => {
-      if (!isMobileDevice() || !appUrl || !webUrl) return;
+      if (link.target === '_blank' || !isMobileDevice() || !appUrl || !webUrl) return;
       e.preventDefault();
       // Try the app first, then fall back to the web link.
       window.location.href = appUrl;

@@ -1,9 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home</title>
+  <title>Ryan McKenzie | Live Music &amp; Shows</title>
+  <meta name="description" content="Meet Ryan McKenzie, find upcoming live shows in New England, and get in touch for bookings.">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -18,9 +19,11 @@
 
 
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/warm-home.css">
 </head>
 
-<body class="home-page">
+<body class="home-page warm-home">
+<a class="skip-link" href="#main-content">Skip to content</a>
 
 <!-- ===================== HEADER ===================== -->
 <header id="nav">
@@ -29,7 +32,7 @@
     <!-- LEFT NAV -->
     <nav class="left-nav">
       <ul>
-        <li><a href="music.html">Music</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="shows.html">Shows</a></li>
         <li><a href="epk.html">EPK</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -49,9 +52,7 @@
     <!-- RIGHT SOCIAL ICONS -->
     <div class="header-icons">
       <a class="social-link" href="https://www.facebook.com/ry.mckenzie.music" data-app-url="fb://profile/ry.mckenzie.music"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
-      <a class="social-link" href="https://open.spotify.com/" data-app-url="spotify://"><img src="assets/icons/spotify.svg" class="icon" alt="Spotify"></a>
-      <a class="social-link" href="https://music.apple.com/" data-app-url="music://"><img src="assets/icons/apple-music.svg" class="icon" alt="Apple Music"></a>
-      <a class="social-link" href="https://www.instagram.com/ryan.mckenzie.music/" data-app-url="instagram://user?username=ryan.mckenzie.music"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
+      <a class="social-link" href="https://www.instagram.com/ryanmckenziemusic/" data-app-url="instagram://user?username=ryanmckenziemusic"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
       <a class="social-link" href="https://www.youtube.com/@Ryan.MckenzieMusic" data-app-url="youtube://www.youtube.com/@Ryan.MckenzieMusic"><img src="assets/icons/youtube.svg" class="icon" alt="YouTube"></a>
     </div>
 
@@ -60,155 +61,90 @@
 
 
 
-<!-- ===================== HERO SECTION ===================== -->
-<section class="hero-home">
-
-  <!-- ALWAYS VISIBLE GRADIENTS -->
-  <div class="section-gradient top-gradient"></div>
-  <div class="section-gradient bottom-gradient"></div>
-
-  <!-- Desktop inline hero nav -->
-  <div class="hero-inline-nav">
+<main id="main-content">
+<section class="hero-home" aria-label="Welcome">
+  <nav class="hero-inline-nav" aria-label="Main navigation">
     <div class="hero-inline-links">
-      <a href="shows.html">Tour</a>
+      <a href="shows.html">Shows</a>
       <a href="contact.html">Contact</a>
     </div>
     <h1 class="hero-name-large hero-name-inline">RYAN MCKENZIE</h1>
     <div class="hero-inline-links">
       <a href="epk.html">EPK</a>
-      <a href="music.html">Music</a>
+      <a href="#about">About</a>
     </div>
-  </div>
-
-  <!-- Mobile hero title -->
+  </nav>
   <h1 class="hero-name-large hero-name-mobile">RYAN MCKENZIE</h1>
-
-    <div class="hero-social-icons">
-    <a class="social-link" href="https://www.facebook.com/ry.mckenzie.music" data-app-url="fb://profile/ry.mckenzie.music"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
-    <a class="social-link" href="https://open.spotify.com/" data-app-url="spotify://"><img src="assets/icons/spotify.svg" class="icon" alt="Spotify"></a>
-    <a class="social-link" href="https://music.apple.com/" data-app-url="music://"><img src="assets/icons/apple-music.svg" class="icon" alt="Apple Music"></a>
-    <a class="social-link" href="https://www.instagram.com/ryan.mckenzie.music/" data-app-url="instagram://user?username=ryan.mckenzie.music"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
-    <a class="social-link" href="https://www.youtube.com/@Ryan.MckenzieMusic" data-app-url="youtube://www.youtube.com/@Ryan.MckenzieMusic"><img src="assets/icons/youtube.svg" class="icon" alt="YouTube"></a>
-  </div>
-<div class="hero-block fade">
-      <p class="hero-tagline">
-          Welcome to my journey, it's all just beginning...
-      </p>
-
-      <div class="waveform"></div>
-  </div>
-  <div class="hero-bottom-gradient"></div>
-  
-
-</section>
-
-
-
-<!-- ===================== MUSIC PREVIEW ===================== -->
-<section id="music-preview" class="home-section">
-
-  <!-- Background (fades in/out) -->
-  <div class="section-bg"></div>
-
-  <!-- Permanent gradients -->
-  <div class="section-gradient top-gradient"></div>
-  <div class="section-gradient bottom-gradient"></div>
-
-  <!-- Content (fades in/out) -->
-  <div class="section-content fade">
-    <h2 class="section-title folk-title">Music</h2>
-    <p class="section-description">Original music in the works</p>
-    <a href="music.html" class="section-button">Coming Soon...</a>
-  </div>
-  <div class="hero-bottom-gradient"></div>
-</section>
-
-
-
-
-<!-- ===================== SHOWS PREVIEW ===================== -->
-<section id="shows-preview" class="home-section">
-
-    <div class="section-bg"></div>
-    <div class="shows-page-silhouette"></div>
-  
-    <div class="section-gradient top-gradient"></div>
-    <div class="section-gradient bottom-gradient"></div>
-  
-    <div class="section-content shows-preview-content">
-  
-        <h2 class="section-title shows-title folk-title">Shows</h2>
-  
-        <div class="tour-list">
-  
-          <div class="tour-row">
-              <div class="tour-date">JAN 2nd, 2026</div>
-              <div class="tour-venue">YUMMY ASIAN CUISINE</div>
-              <div class="tour-location">PALMER, MA</div>
-              <div class="tour-time">6:00 PM</div>
-          </div>
-
-          <div class="tour-row">
-              <div class="tour-date">JAN 4th, 2026</div>
-              <div class="tour-venue">LOST TOWNS BREWING</div>
-              <div class="tour-location">GILBERTVILLE, MA</div>
-              <div class="tour-time">3:00 PM</div>
-          </div>
-
-          <div class="tour-row">
-              <div class="tour-date">FEB 6th, 2026</div>
-              <div class="tour-venue">YUMMY ASIAN CUISINE</div>
-              <div class="tour-location">PALMER, MA</div>
-              <div class="tour-time">6:00 PM</div>
-          </div>
-  
-        </div>
-  
-        <a href="shows.html" class="section-button shows-view-all">View All Shows</a>
-  
+  <div class="welcome-layout">
+    <div class="welcome-copy">
+      <p class="warm-kicker">New England &middot; Live acoustic music</p>
+      <h2>Familiar favorites.<br> Original stories.</h2>
+      <p class="welcome-note">I'm Ryan McKenzie, a New England songwriter and FYR360 songwriting competition winner. I bring familiar songs from across genres and my own acoustic pop/folk originals to bars and breweries for three-hour sets of live acoustic music.</p>
+      <div class="warm-actions">
+        <a class="warm-button" href="shows.html">Upcoming Shows <span aria-hidden="true">&#8599;</span></a>
+        <a class="warm-text-link" href="contact.html">Book a Show <span aria-hidden="true">&#8599;</span></a>
+      </div>
+      <p class="welcome-footnote">Come for the music. Stay for a little while.</p>
     </div>
-
-    
-
-    <div class="hero-bottom-gradient"></div>
-
-</section>
-
-  
-
-
-<!-- ===================== CONTACT PREVIEW ===================== -->
-<section id="contact-preview" class="home-section">
-
-  <div class="section-bg fade"></div>
-
-  <!-- Permanent gradients -->
-  <div class="section-gradient top-gradient"></div>
-  <div class="section-gradient bottom-gradient"></div>
-
-  <div class="section-content fade">
-    <h2 class="section-title folk-title">Contact</h2>
-    <p class="section-description">Reach out for booking, inquiries, or collaborations.</p>
-    <a href="contact.html" class="section-button">Contact Me</a>
+    <figure class="welcome-photo">
+      <img src="assets/img/portrait-welcome.webp" alt="Ryan McKenzie smiling with his acoustic guitar beside a wooded river" width="1800" height="1200" fetchpriority="high">
+      <figcaption>Out in the open. Right at home.</figcaption>
+    </figure>
   </div>
-  <div class="hero-bottom-gradient"></div>
-
 </section>
 
+<section id="upcoming-shows" class="warm-section" aria-labelledby="upcoming-title">
+  <div class="warm-section-heading">
+    <div><p class="warm-kicker">See you out there</p><h2 id="upcoming-title">Upcoming Shows</h2></div>
+    <a class="warm-text-link" href="shows.html">All Shows <span aria-hidden="true">&#8599;</span></a>
+  </div>
+  <div class="warm-show-list">
+    <article class="warm-show" data-show-date="2026-10-10">
+      <time datetime="2026-10-10"><span>OCT</span><strong>10</strong><span>2026</span></time>
+      <div><h3><a href="https://themillatfrenchriv.wixsite.com/my-site-1">The Mill @ French River <span aria-hidden="true">&#8599;</span></a></h3><p>Dudley, MA</p></div>
+      <p class="warm-show-time">7:00 PM</p>
+    </article>
+    <article class="warm-show" data-show-date="2026-12-26">
+      <time datetime="2026-12-26"><span>DEC</span><strong>26</strong><span>2026</span></time>
+      <div><h3><a href="https://ltbrew.com/">Lost Towns Brewing <span aria-hidden="true">&#8599;</span></a></h3><p>Ware, MA</p></div>
+      <p class="warm-show-time">3:00&ndash;5:00 PM</p>
+    </article>
+  </div>
+</section>
 
+<section id="about" class="warm-section warm-about" aria-labelledby="about-title">
+  <img class="about-portrait" src="assets/img/portrait-playing.webp" alt="Ryan playing acoustic guitar outdoors" width="1000" height="1500" loading="lazy">
+  <div class="about-copy"><p class="warm-kicker">A little about me</p><h2 id="about-title">Hi, I'm Ryan.</h2>
+    <p>I'm a New England songwriter and live performer. This is where you can follow my journey, find my next show, and get in touch.</p>
+    <p>Original music is in the works. Until then, I'd love to see you at a live show.</p>
+    <a class="warm-text-link" href="epk.html">More about my music &amp; live performances <span aria-hidden="true">&#8599;</span></a>
+  </div>
+</section>
+
+<div class="monarch-section">
+  <img src="assets/img/monarch.webp" alt="A monarch butterfly with its wings spread on a yellow flower" width="642" height="480" loading="lazy">
+</div>
+
+<section class="warm-section warm-contact" aria-labelledby="contact-title">
+  <p class="warm-kicker">Let's make something happen</p><h2 id="contact-title">A stage. A gathering. A good evening.</h2>
+  <p>Get in touch for bookings, inquiries, or just to say hello.</p>
+  <div class="warm-actions"><a class="warm-button" href="contact.html">Get in Touch <span aria-hidden="true">&#8599;</span></a>
+  <a class="warm-text-link" href="https://www.instagram.com/ryanmckenziemusic/">Follow on Instagram <span aria-hidden="true">&#8599;</span></a></div>
+</section>
+</main>
 
 <!-- ===================== FOOTER ===================== -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-title folk-title">Ryan McKenzie</div>
-      <p class="footer-tagline"></p>
+      <p class="footer-tagline">New England songwriter &amp; live performer.</p>
     </div>
 
     <div class="footer-nav">
       <h3 class="footer-heading">Explore</h3>
       <ul>
-        <li><a href="music.html">Music</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="shows.html">Shows</a></li>
         <li><a href="epk.html">EPK</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -220,25 +156,24 @@
       <p><a href="contact.html">Contact</a></p>
       <div class="footer-social">
         <a class="social-link" href="https://www.facebook.com/ry.mckenzie.music" data-app-url="fb://profile/ry.mckenzie.music"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
-        <a class="social-link" href="https://open.spotify.com/" data-app-url="spotify://"><img src="assets/icons/spotify.svg" class="icon" alt="Spotify"></a>
-        <a class="social-link" href="https://music.apple.com/" data-app-url="music://"><img src="assets/icons/apple-music.svg" class="icon" alt="Apple Music"></a>
-        <a class="social-link" href="https://www.instagram.com/ryan.mckenzie.music/" data-app-url="instagram://user?username=ryan.mckenzie.music"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
+        <a class="social-link" href="https://www.instagram.com/ryanmckenziemusic/" data-app-url="instagram://user?username=ryanmckenziemusic"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
         <a class="social-link" href="https://www.youtube.com/@Ryan.MckenzieMusic" data-app-url="youtube://www.youtube.com/@Ryan.MckenzieMusic"><img src="assets/icons/youtube.svg" class="icon" alt="YouTube"></a>
       </div>
     </div>
   </div>
 
   <div class="footer-bottom">
-    <small>© 2025 Ryan McKenzie</small>
+    <small>&copy; 2026 Ryan McKenzie</small>
     <small>All rights reserved.</small>
   </div>
 </footer>
 
 
 <!-- FILM GRAIN -->
-<div class="film-grain"></div>
+
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/warm-home.js"></script>
 
 </body>
 </html>

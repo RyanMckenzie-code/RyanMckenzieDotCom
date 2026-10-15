@@ -16,14 +16,15 @@
 
   <!-- Critical inline styles to prevent white flash on first paint -->
   <style>
-    html, body { background: #211c1a; color: #C8C8C8; }
+    html, body { background: #f5f0e6; color: #263b2d; }
     body.preload { opacity: 0; }
-    body.fade-out { opacity: 0; background: #211c1a; }
+    body.fade-out { opacity: 0; background: #f5f0e6; }
   </style>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/warm-epk.css">
 </head>
 
-<body class="epk-page preload">
+<body class="epk-page warm-epk preload">
 
 <!-- ===================== HEADER ===================== -->
 <header id="nav">
@@ -49,15 +50,15 @@
       <a class="social-link" href="https://www.facebook.com/ry.mckenzie.music" data-app-url="fb://profile/ry.mckenzie.music"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
       <a class="social-link" href="https://open.spotify.com/" data-app-url="spotify://"><img src="assets/icons/spotify.svg" class="icon" alt="Spotify"></a>
       <a class="social-link" href="https://music.apple.com/" data-app-url="music://"><img src="assets/icons/apple-music.svg" class="icon" alt="Apple Music"></a>
-      <a class="social-link" href="https://www.instagram.com/ryan.mckenzie.music/" data-app-url="instagram://user?username=ryan.mckenzie.music"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
+      <a class="social-link" href="https://www.instagram.com/ryanmckenziemusic/" data-app-url="instagram://user?username=ryanmckenziemusic"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
       <a class="social-link" href="https://www.youtube.com/@Ryan.MckenzieMusic" data-app-url="youtube://www.youtube.com/@Ryan.MckenzieMusic"><img src="assets/icons/youtube.svg" class="icon" alt="YouTube"></a>
     </div>
   </div>
 </header>
 
 <!-- Silhouettes -->
-<div class="epk-silhouette s1"></div>
-<div class="epk-silhouette s2"></div>
+<div class="epk-silhouette s1" aria-hidden="true"></div>
+<div class="epk-silhouette s2" aria-hidden="true"></div>
 
 
 <!-- ===================== HERO ===================== -->
@@ -70,17 +71,18 @@
     <div class="epk-hero-inner">
       <div class="epk-hero-copy">
         <p class="hero-tagline">
-          Acoustic storytelling with a warm, modern folk edge - sets built personally for your rooms.
+          Familiar favorites. Original stories. Three-hour acoustic sets for bars and breweries, with covers across genres and acoustic pop/folk originals.
         </p>
+        <p class="epk-award"><span>Songwriting recognition</span><strong>FYR360&deg; Community Songwriting Contest Winner</strong><em>For &ldquo;Can&rsquo;t Let You Down&rdquo;</em></p>
         <div class="epk-hero-cta">
           <a class="section-button booking-trigger" id="epk-booking-open" href="#epk-booking">Book Ryan</a>
           <a class="section-button secondary" href="#assets">Download assets</a>
         </div>
       </div>
       <div class="epk-hero-photo">
-        <img src="assets/img/EPKmain.jpeg" alt="Ryan McKenzie press photo">
+        <img src="assets/img/portrait-epk.webp" alt="Ryan McKenzie playing acoustic guitar beside a wooded river" width="1200" height="1800" fetchpriority="high">
         <div class="epk-photo-note">Print + web ready</div>
-        <a class="section-button secondary epk-photo-download" href="assets/img/EPKmain.jpeg" download>Download</a>
+        <a class="section-button secondary epk-photo-download" href="assets/img/portrait3.jpeg" download>Download</a>
       </div>
     </div>
   </div>
@@ -104,11 +106,11 @@
       </div>
       <div class="epk-card stat-card">
         <div class="stat-label">Ideal For</div>
-        <div class="stat-value">Listening rooms, taprooms, private gatherings</div>
+        <div class="stat-value">Bars, breweries, and private gatherings</div>
       </div>
       <div class="epk-card stat-card">
         <div class="stat-label">Sets</div>
-        <div class="stat-value">Flexible pacing for feature or ambiance</div>
+        <div class="stat-value">Three-hour acoustic sets</div>
       </div>
       <div class="epk-card stat-card">
         <div class="stat-label">Based</div>
@@ -132,9 +134,9 @@
   <div class="epk-container epk-two-col">
     <div class="epk-panel">
       <p class="epk-kicker">Bio</p>
-      <h3 class="epk-subtitle">Modern folk with a storyteller's pulse</h3>
-      <p class="epk-body">Ryan McKenzie pairs percussive acoustic guitar with honest, conversational lyrics. The set moves from intimate ballads to driving rhythms, keeping audiences engaged without overpowering the room.</p>
-      <p class="epk-body">Expect original songs with a few familiar favorites woven in, delivered with the same care whether it's a seated listening room or a busy taproom.</p>
+      <h3 class="epk-subtitle">Acoustic roots. Pop heart.</h3>
+      <p class="epk-body">Ryan McKenzie is a New England songwriter and live performer whose original music blends acoustic pop and folk. His live sets bring familiar songs from across genres together with his own original material.</p>
+      <p class="epk-body">Ryan won the FYR360&deg; Community Songwriting Contest for his original song, &ldquo;Can&rsquo;t Let You Down.&rdquo; He plays three-hour acoustic sets at bars and breweries around New England.</p>
     </div>
     <div class="epk-panel">
       <p class="epk-kicker">What You'll Get</p>
@@ -161,6 +163,7 @@
       <p class="epk-kicker">Focus Tracks</p>
       <h3 class="epk-subtitle">Current set highlights</h3>
       <div class="epk-tracklist">
+        <div class="track-row"><div><div class="track-name">Can&rsquo;t Let You Down</div><div class="track-note">FYR360&deg; Community Songwriting Contest winning song</div></div></div>
         <div class="track-row">
           <div>
             <div class="track-name">Burn</div>
@@ -205,7 +208,7 @@
       <p class="epk-kicker">Live Video</p>
       <h3 class="epk-subtitle">See the set in motion</h3>
       <div class="video-card">
-        <div class="video-embed video-embed-cover" style="background-image: url('assets/img/EPKmain.jpeg');">
+        <div class="video-embed video-embed-cover" style="background-image: url('assets/img/portrait-epk.webp');">
           <iframe
             src="https://www.youtube.com/embed/uuWVyHiChjo?start=414&end=584"
             title="Ryan McKenzie - Lost In Space (Live studio performance excerpt)"
@@ -232,13 +235,13 @@
 
     <div class="asset-grid">
       <div class="asset-card">
-        <div class="asset-thumb asset-thumb-vertical" style="background-image: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.5)), url('assets/img/ActionShotVertical.jpeg');"></div>
+        <div class="asset-thumb asset-thumb-vertical" style="background-image: url('assets/img/portrait-epk.webp');"></div>
         <div class="asset-body">
           <div>
-            <div class="asset-title">Action Promo Photo</div>
+            <div class="asset-title">Acoustic Portrait</div>
             <div class="asset-note">Vertical - ready for flyers or socials</div>
           </div>
-          <a class="section-button secondary" href="assets/img/ActionShotVertical.jpeg" download>Download</a>
+          <a class="section-button secondary" href="assets/img/portrait3.jpeg" download>Download</a>
         </div>
       </div>
       <div class="asset-card">
@@ -258,7 +261,7 @@
             <div class="asset-contact-actions">
               <a class="section-button booking-trigger" href="#epk-booking">Book form</a>
               <a class="section-button" href="contact.html">Contact form</a>
-              <a class="section-button secondary" href="https://www.instagram.com/ryan.mckenzie.music/" target="_blank" rel="noopener">Message on Instagram</a>
+              <a class="section-button secondary" href="https://www.instagram.com/ryanmckenziemusic/" target="_blank" rel="noopener">Message on Instagram</a>
             </div>
           </div>
         </div>
@@ -343,7 +346,7 @@
         <a class="social-link" href="https://www.facebook.com/ry.mckenzie.music" data-app-url="fb://profile/ry.mckenzie.music"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
         <a class="social-link" href="https://open.spotify.com/" data-app-url="spotify://"><img src="assets/icons/spotify.svg" class="icon" alt="Spotify"></a>
         <a class="social-link" href="https://music.apple.com/" data-app-url="music://"><img src="assets/icons/apple-music.svg" class="icon" alt="Apple Music"></a>
-        <a class="social-link" href="https://www.instagram.com/ryan.mckenzie.music/" data-app-url="instagram://user?username=ryan.mckenzie.music"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
+        <a class="social-link" href="https://www.instagram.com/ryanmckenziemusic/" data-app-url="instagram://user?username=ryanmckenziemusic"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
         <a class="social-link" href="https://www.youtube.com/@Ryan.MckenzieMusic" data-app-url="youtube://www.youtube.com/@Ryan.MckenzieMusic"><img src="assets/icons/youtube.svg" class="icon" alt="YouTube"></a>
       </div>
     </div>
@@ -357,7 +360,7 @@
 
 
 <!-- FILM GRAIN -->
-<div class="film-grain"></div>
+
 
 <script src="assets/js/main.js"></script>
 </body>

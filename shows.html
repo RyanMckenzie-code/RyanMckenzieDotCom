@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Shows</title>
+  <title>Upcoming Shows | Ryan McKenzie</title>
+  <meta name="description" content="Find Ryan McKenzie live at bars and breweries across New England. Upcoming acoustic shows, venue links, and booking inquiries.">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -15,9 +16,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/warm-shows.css">
 </head>
 
-<body class="shows-page">
+<body class="shows-page warm-shows">
 
 <!-- ===================== HEADER ===================== -->
 <header id="nav">
@@ -26,7 +28,7 @@
     <!-- LEFT NAV -->
     <nav class="left-nav">
       <ul>
-        <li><a href="music.html">Music</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="shows.html">Shows</a></li>
         <li><a href="epk.html">EPK</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -46,9 +48,7 @@
     <!-- RIGHT SOCIAL ICONS -->
     <div class="header-icons">
       <a class="social-link" href="https://www.facebook.com/ry.mckenzie.music" data-app-url="fb://profile/ry.mckenzie.music"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
-      <a class="social-link" href="https://open.spotify.com/" data-app-url="spotify://"><img src="assets/icons/spotify.svg" class="icon" alt="Spotify"></a>
-      <a class="social-link" href="https://music.apple.com/" data-app-url="music://"><img src="assets/icons/apple-music.svg" class="icon" alt="Apple Music"></a>
-      <a class="social-link" href="https://www.instagram.com/ryan.mckenzie.music/" data-app-url="instagram://user?username=ryan.mckenzie.music"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
+      <a class="social-link" href="https://www.instagram.com/ryanmckenziemusic/" data-app-url="instagram://user?username=ryanmckenziemusic"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
       <a class="social-link" href="https://www.youtube.com/@Ryan.MckenzieMusic" data-app-url="youtube://www.youtube.com/@Ryan.MckenzieMusic"><img src="assets/icons/youtube.svg" class="icon" alt="YouTube"></a>
     </div>
 
@@ -58,17 +58,20 @@
 
 
 <!-- ===================== SHOWS LIST ===================== -->
-<section id="shows-page-list" class="home-section">
+<main id="shows-page-list" class="home-section">
 
     <div class="section-bg shows-page-bg"></div>
-    <div class="shows-page-silhouette"></div>
+    <div class="shows-page-silhouette" aria-hidden="true"></div>
   
     <div class="section-gradient top-gradient"></div>
     <div class="section-gradient bottom-gradient"></div>
   
     <div class="section-content shows-preview-content fade">
   
-        <h2 class="section-title shows-title folk-title">Upcoming Dates</h2>
+        <div class="shows-intro"><p class="shows-kicker">Live around New England</p>
+        <h1 class="section-title shows-title folk-title">See you at a show.</h1>
+        <p class="shows-description">Familiar favorites. Original stories. An evening of live acoustic music.</p></div>
+        <div class="shows-list-heading"><h2>Upcoming Shows</h2><span>Dates &amp; venues</span></div>
   
         <div class="tour-list">
   
@@ -186,27 +189,43 @@
 
           <div class="tour-row">
               <div class="tour-date">OCT 10th, 2026</div>
-              <div class="tour-venue">THE MILL @ FRENCH RIVER</div>
-              <div class="tour-location">WEBSTER, MA</div>
+              <div class="tour-venue"><a href="https://themillatfrenchriv.wixsite.com/my-site-1" target="_blank" rel="noopener noreferrer" style="color: inherit; text-underline-offset: 0.2em;">THE MILL @ FRENCH RIVER</a></div>
+              <div class="tour-location">DUDLEY, MA</div>
               <div class="tour-time">7:00 PM</div>
+          </div>
+
+          <div class="tour-row">
+              <div class="tour-date">DEC 26th, 2026</div>
+              <div class="tour-venue"><a href="https://ltbrew.com/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-underline-offset: 0.2em;">LOST TOWNS BREWING</a></div>
+              <div class="tour-location">WARE, MA</div>
+              <div class="tour-time">3:00–5:00 PM</div>
+              <details class="show-calendar">
+                <summary>Add to Calendar</summary>
+                <div class="show-calendar-options">
+                  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Ryan%20McKenzie%20at%20Lost%20Towns%20Brewing&amp;dates=20261226T200000Z%2F20261226T220000Z&amp;ctz=America%2FNew_York&amp;location=Lost%20Towns%20Brewing%2C%20Ware%2C%20MA&amp;details=Live%20acoustic%20music%20with%20Ryan%20McKenzie.%20Show%20details%3A%20https%3A%2F%2Fryanmckenziemusic.com%2Fshows.html" target="_blank" rel="noopener noreferrer">Google Calendar &#8599;</a>
+                  <a href="assets/calendar/ryan-mckenzie-lost-towns-2026-12-26.ics" download>Outlook / Apple Calendar ? Download event (.ics)</a>
+                  <p class="calendar-signin-note">For Outlook on the web: download the event, then open Calendar &rarr; Add calendar &rarr; Upload from file. Choose the downloaded file and your calendar, then select Import.</p>
+                </div>
+              </details>
           </div>
   
         </div>
   
-        <a href="#" class="section-button shows-view-all">More Dates Coming Soon</a>
+        <p class="shows-updates">More dates are on the way. <a href="https://www.instagram.com/ryanmckenziemusic/">Follow along on Instagram &#8599;</a></p>
+        <aside class="shows-booking"><div><p class="shows-kicker">Bring the music to your room</p><h2>Have a stage in mind?</h2><p>Three-hour acoustic sets for bars, breweries, and gatherings.</p></div><a class="section-button" href="contact.html">Book a Show &#8599;</a></aside>
 
         <!-- Availability calendar -->
-        <div class="availability">
-          <h3 class="availability-title folk-title">Availability Snapshot</h3>
-          <p class="availability-note">Booked dates are shown in red; open days are green. Reach out to lock in an open day.</p>
-          <div id="availability-grid" class="calendar-container"></div>
-        </div>
+        <details class="availability">
+          <summary class="availability-title">Planning an event? View the calendar</summary>
+          <p class="availability-note">Published show dates are shown in red. Other dates are green; contact me to confirm availability. Scroll sideways to explore the months.</p>
+          <div id="availability-grid" class="calendar-container" tabindex="0" role="region" aria-label="Show dates by month"></div>
+        </details>
   
     </div>
   
     <div class="hero-bottom-gradient"></div>
 
-  </section>
+  </main>
 
 
 
@@ -221,7 +240,7 @@
     <div class="footer-nav">
       <h3 class="footer-heading">Explore</h3>
       <ul>
-        <li><a href="music.html">Music</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="shows.html">Shows</a></li>
         <li><a href="epk.html">EPK</a></li>
         <li><a href="contact.html">Contact</a></li>
@@ -233,9 +252,7 @@
       <p><a href="contact.html">Contact</a></p>
       <div class="footer-social">
         <a class="social-link" href="https://www.facebook.com/ry.mckenzie.music" data-app-url="fb://profile/ry.mckenzie.music"><img src="assets/icons/Facebook.svg" class="icon" alt="Facebook"></a>
-        <a class="social-link" href="https://open.spotify.com/" data-app-url="spotify://"><img src="assets/icons/spotify.svg" class="icon" alt="Spotify"></a>
-        <a class="social-link" href="https://music.apple.com/" data-app-url="music://"><img src="assets/icons/apple-music.svg" class="icon" alt="Apple Music"></a>
-        <a class="social-link" href="https://www.instagram.com/ryan.mckenzie.music/" data-app-url="instagram://user?username=ryan.mckenzie.music"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
+        <a class="social-link" href="https://www.instagram.com/ryanmckenziemusic/" data-app-url="instagram://user?username=ryanmckenziemusic"><img src="assets/icons/instagram.svg" class="icon" alt="Instagram"></a>
         <a class="social-link" href="https://www.youtube.com/@Ryan.MckenzieMusic" data-app-url="youtube://www.youtube.com/@Ryan.MckenzieMusic"><img src="assets/icons/youtube.svg" class="icon" alt="YouTube"></a>
       </div>
     </div>
@@ -249,7 +266,7 @@
 
 
 <!-- FILM GRAIN -->
-<div class="film-grain"></div>
+
 
 <script src="assets/js/main.js"></script>
 <script>

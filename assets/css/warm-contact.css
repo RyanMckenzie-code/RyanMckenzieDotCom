@@ -1,0 +1,47 @@
+.warm-contact-page { background: #f5f0e6; color: #263b2d !important; }
+.warm-contact-page *, .warm-contact-page *::before, .warm-contact-page *::after { box-sizing: border-box; }
+.warm-contact-page a { color: inherit; text-underline-offset: 5px; }
+.warm-contact-page a:focus-visible, .warm-contact-page button:focus-visible, .warm-contact-page input:focus-visible, .warm-contact-page textarea:focus-visible { outline: 3px solid #b25b2e; outline-offset: 4px; }
+.warm-contact-page header { background: rgba(245,240,230,.96); border-color: #c6c9b8; }
+.warm-contact-page .left-nav a, .warm-contact-page .site-title { color: #263b2d !important; text-shadow: none; -webkit-text-stroke: 0; }
+.warm-contact-page .icon { filter: brightness(0) saturate(100%) invert(20%) sepia(14%) saturate(1031%) hue-rotate(87deg) brightness(92%) contrast(89%); }
+.warm-contact-page #contact-page-section { position: relative; padding: 150px 6% 100px; overflow: hidden; }
+.contact-layout { display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; align-items: start; }
+.contact-silhouette { position: absolute; left: -100px; bottom: -80px; width: 650px; height: 850px; background: url('../img/EPKsil1.png') center bottom / contain no-repeat; filter: brightness(0) saturate(100%) invert(20%) sepia(14%) saturate(1031%) hue-rotate(87deg); opacity: .065; pointer-events: none; }
+.contact-kicker { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #926040; margin: 0 0 25px; }
+.contact-intro h1 { font-family: 'Fraunces', serif; font-size: clamp(44px, 5vw, 70px); font-weight: 400; letter-spacing: -1px; line-height: 1.1; margin: 0 0 30px; }
+.contact-lead { font-family: 'Cormorant Garamond', serif; font-size: 26px; line-height: 1.5; margin: 0 0 35px; }
+.contact-booking-note { border-top: 1px solid #c6c9b8; padding: 25px 0; }
+.contact-booking-note h2 { font-family: 'Fraunces', serif; font-size: 23px; font-weight: 400; margin: 0 0 12px; }
+.contact-booking-note p { font-family: 'Cormorant Garamond', serif; font-size: 21px; line-height: 1.6; margin: 0; }
+.contact-instagram { display: inline-block; font-family: 'Fraunces', serif; font-size: 15px; line-height: 1.7; }
+.contact-form-panel { background: #faf7f0; border: 1px solid #c6c9b8; padding: 36px; box-shadow: 0 18px 40px rgba(38,59,45,.04); }
+.contact-form-panel > h2 { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 400; margin: 0 0 12px; }
+.contact-form-note { font-family: 'Cormorant Garamond', serif; font-size: 18px; color: #53604e; margin: 0 0 28px; }
+.warm-contact-page .contact-page-form { max-width: none; margin: 0; gap: 22px; }
+.contact-field { min-width: 0; }
+.contact-field label { display: block; margin-bottom: 10px; font-family: 'Fraunces', serif; font-size: 14px; }
+.contact-field label span { color: #53604e; }
+.warm-contact-page .contact-input, .warm-contact-page .contact-textarea { width: 100%; border: 1px solid #aeb69f; border-radius: 2px; background: #fffdf8; color: #263b2d; font-family: 'Cormorant Garamond', serif; font-size: 20px; padding: 13px 14px; }
+.warm-contact-page .contact-input::placeholder, .warm-contact-page .contact-textarea::placeholder { color: #67735e; }
+.warm-contact-page .contact-textarea { resize: vertical; min-height: 160px; }
+.warm-contact-page .contact-page-form .section-button { background: #263b2d; color: #fff9ed; border: 1px solid #263b2d; border-radius: 2px; margin: 0; padding: 16px 24px; justify-self: start; max-width: none; display: inline-flex; gap: 28px; align-items: center; }
+.warm-contact-page .section-button:hover { background: #425740; }
+.warm-contact-page .form-status { color: #263b2d; font-size: 18px; margin: 0; }
+.warm-contact-page .site-footer { background: #e9e5d8; color: #263b2d !important; border-top: 1px solid #c6c9b8; }
+.warm-contact-page .footer-title, .warm-contact-page .footer-heading, .warm-contact-page .footer-nav a, .warm-contact-page .footer-contact a { color: #263b2d !important; text-shadow: none; -webkit-text-stroke: 0; }
+.warm-contact-page .footer-bottom { color: #53604e; }
+@media (max-width: 1000px) { .contact-layout { gap: 35px; grid-template-columns: 1fr 1.2fr; } }
+@media (max-width: 820px) {
+  .warm-contact-page #contact-page-section { padding: 110px 6% 60px; }
+  .contact-layout { grid-template-columns: minmax(0, 1fr); gap: 35px; }
+  .contact-intro h1 br { display: none; }
+  .contact-intro h1 { font-size: 46px; }
+  .contact-lead { font-size: 24px; }
+  .contact-form-panel { padding: 24px 20px; }
+  .warm-contact-page .contact-page-form .form-row { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .contact-silhouette { width: 430px; height: 600px; left: auto; right: -150px; top: 40px; bottom: auto; opacity: .05; }
+  .warm-contact-page .left-nav { background: #f5f0e6; }
+  .warm-contact-page #menu-toggle span { background: #263b2d; }
+}
+@media (prefers-reduced-motion: reduce) { .warm-contact-page * { transition: none !important; animation: none !important; } }

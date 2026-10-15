@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ryan McKenzie//Shows//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:20261226-lost-towns@ryanmckenziemusic.com
+DTSTAMP:20261015T160000Z
+DTSTART:20261226T200000Z
+DTEND:20261226T220000Z
+SUMMARY:Ryan McKenzie at Lost Towns Brewing
+LOCATION:Lost Towns Brewing\, Ware\, MA
+DESCRIPTION:Live acoustic music with Ryan McKenzie.\nShow details:
+ https://ryanmckenziemusic.com/shows.html
+URL:https://ryanmckenziemusic.com/shows.html
+END:VEVENT
+END:VCALENDAR
