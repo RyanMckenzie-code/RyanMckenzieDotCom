@@ -39,6 +39,7 @@
 .warm-show h3 a:hover { text-decoration: underline; }
 .warm-show p { margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 20px; }
 .warm-show .warm-show-time { font-family: 'Fraunces', serif; font-size: 16px; white-space: nowrap; }
+.warm-show-calendar { grid-column: 2 / -1; justify-self: end; }
 .warm-about { display: grid; grid-template-columns: .85fr 1fr; gap: 85px; align-items: center; }
 .about-portrait { width: 100%; height: 480px; object-fit: cover; object-position: center 64%; }
 .about-copy p:not(.warm-kicker), .warm-contact > p:not(.warm-kicker) { font-family: 'Cormorant Garamond', serif; font-size: 24px; line-height: 1.6; }
@@ -79,6 +80,7 @@
   .warm-show { grid-template-columns: 55px 1fr; gap: 18px; }
   .warm-show-time { grid-column: 2; margin-top: -10px !important; }
   .warm-show time { grid-row: span 2; }
+  .warm-show-calendar { justify-self: start; }
   .warm-section-heading { align-items: start; }
   .warm-section-heading > a { white-space: nowrap; }
   .warm-about { grid-template-columns: 1fr; gap: 30px; }

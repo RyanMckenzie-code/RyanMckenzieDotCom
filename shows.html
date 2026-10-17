@@ -17,6 +17,7 @@
 
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/warm-shows.css">
+  <link rel="stylesheet" href="assets/css/monarchs.css">
 </head>
 
 <body class="shows-page warm-shows">
@@ -58,7 +59,8 @@
 
 
 <!-- ===================== SHOWS LIST ===================== -->
-<main id="shows-page-list" class="home-section">
+<main id="shows-page-list" class="home-section monarch-host">
+  <span class="monarch-accent monarch-accent--listing monarch-accent--cupped" aria-hidden="true"></span>
 
     <div class="section-bg shows-page-bg"></div>
     <div class="shows-page-silhouette" aria-hidden="true"></div>
@@ -199,14 +201,9 @@
               <div class="tour-venue"><a href="https://ltbrew.com/" target="_blank" rel="noopener noreferrer" style="color: inherit; text-underline-offset: 0.2em;">LOST TOWNS BREWING</a></div>
               <div class="tour-location">WARE, MA</div>
               <div class="tour-time">3:00–5:00 PM</div>
-              <details class="show-calendar">
-                <summary>Add to Calendar</summary>
-                <div class="show-calendar-options">
-                  <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;text=Ryan%20McKenzie%20at%20Lost%20Towns%20Brewing&amp;dates=20261226T200000Z%2F20261226T220000Z&amp;ctz=America%2FNew_York&amp;location=Lost%20Towns%20Brewing%2C%20Ware%2C%20MA&amp;details=Live%20acoustic%20music%20with%20Ryan%20McKenzie.%20Show%20details%3A%20https%3A%2F%2Fryanmckenziemusic.com%2Fshows.html" target="_blank" rel="noopener noreferrer">Google Calendar &#8599;</a>
-                  <a href="assets/calendar/ryan-mckenzie-lost-towns-2026-12-26.ics" download>Outlook / Apple Calendar ? Download event (.ics)</a>
-                  <p class="calendar-signin-note">For Outlook on the web: download the event, then open Calendar &rarr; Add calendar &rarr; Upload from file. Choose the downloaded file and your calendar, then select Import.</p>
-                </div>
-              </details>
+              <div class="show-calendar">
+                <a class="addcal-btn" href="https://addcal.co/e/23f0uocqqxyc" data-event="23f0uocqqxyc" data-base="addcal.co" data-color="#263b2d">Add to Calendar</a>
+              </div>
           </div>
   
         </div>
@@ -230,7 +227,8 @@
 
 
 <!-- ===================== FOOTER ===================== -->
-<footer class="site-footer">
+<footer class="site-footer monarch-host">
+  <span class="monarch-accent monarch-accent--footer monarch-accent--cupped" aria-hidden="true"></span>
   <div class="footer-inner">
     <div class="footer-brand">
       <div class="footer-title folk-title">Ryan McKenzie</div>
@@ -404,6 +402,7 @@
   })();
 </script>
 
+<script src="https://cdn.addcal.co/embed/v1/button.min.js" async defer></script>
 </body>
 </html>
 

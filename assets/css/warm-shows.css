@@ -28,10 +28,6 @@
 .warm-shows .tour-time { font-size: 15px; letter-spacing: 0; opacity: 1; justify-self: end; }
 .shows-updates { font-family: 'Cormorant Garamond', serif; font-size: 20px; line-height: 1.6; margin: 25px 0 60px; }
 .show-calendar { grid-column: 1 / -1; justify-self: end; font-family: 'Fraunces', serif; font-size: 14px; max-width: 100%; }
-.show-calendar summary { cursor: pointer; border: 1px solid #263b2d; padding: 11px 16px; color: #263b2d; list-style-position: inside; }
-.show-calendar summary:hover { background: #e0e4d6; }
-.show-calendar-options { display: grid; gap: 15px; padding: 20px 16px; background: #f5f0e6; border: 1px solid #c6c9b8; border-top: 0; line-height: 1.5; }
-.calendar-signin-note { max-width: 290px; margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 17px; color: #53604e; }
 .shows-updates a { white-space: nowrap; }
 .shows-booking { display: flex; justify-content: space-between; align-items: center; gap: 30px; background: #263b2d; color: #fff9ed; padding: 38px 40px; }
 .shows-booking .shows-kicker { color: #e4b886; }
