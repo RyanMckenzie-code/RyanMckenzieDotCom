@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "add-to-calendar-button": "^3.5.1"
+  },
+  "private": true,
+  "scripts": {
+    "sync:calendar": "node scripts/sync-calendar.cjs",
+    "postinstall": "npm run sync:calendar"
+  }
+}
